@@ -45,9 +45,6 @@ app.get('/lotto',(req,res)=>{
   let check = house.map(x=>numbers.some(y=>y===x?1:0)).reduce((a,b)=>a+b);
 
   res.send(`<h1>Your Numbers:</h1><p>${numbers.join(', ')}</p><h1>Lotto Numbers:</h1><p>${house.join(', ')}</p><h3>${check>4?check<6?check===4?'Congratulations, you win a free ticket':'Congratulations! You winn $100!':'Wow! Unbelievable! You could have won the mega millions!':'Sorry, you lose.'}</h3>`);
-
-
-
 })
 
 app.get('/',(req,res)=>{
@@ -55,5 +52,4 @@ app.get('/',(req,res)=>{
 })
 
 app.listen(8080,()=>{
-  console.log('placeholder')
 })
